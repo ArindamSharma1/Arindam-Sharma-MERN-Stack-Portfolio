@@ -30,13 +30,8 @@ const techCategories = [
     name: 'Backend',
     techs: [
       { name: 'Node.js', icon: Server },
-      // { name: 'NestJS', icon: Layers },
-      // { name: 'Express.js', icon: Server },
-      // { name: 'REST APIs', icon: Code2 },
-      // { name: 'WebSockets', icon: Zap },
+      { name: 'REST APIs', icon: Code2 },
       { name: 'Authentication', icon: Settings },
-      // { name: 'Middleware', icon: Wrench },
-      // { name: 'Async/Await', icon: Code2 },
     ],
   },
   {
@@ -45,11 +40,9 @@ const techCategories = [
       { name: 'SQL', icon: Database },
       { name: 'MongoDB', icon: Database },
       { name: 'MySQL', icon: Database },
-      // { name: 'Prisma', icon: Layers },
       { name: 'Firebase', icon: Zap },
-      // { name: 'Supabase', icon: Database },
-      // { name: 'Redis', icon: Zap },
-      // { name: 'GraphQL', icon: Code2 },
+      { name: 'Supabase', icon: Database },
+
     ],
   },
   {
@@ -60,7 +53,7 @@ const techCategories = [
       { name: 'AWS', icon: Layers },
       { name: 'Vite', icon: Zap },
       { name: 'Webpack', icon: Settings },
-      // { name: 'CI/CD', icon: Code2 },
+      { name: 'CI/CD', icon: Code2 },
       { name: 'Figma', icon: Wrench },
       { name: 'VS Code', icon: Code2 },
     ],
