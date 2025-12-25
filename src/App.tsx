@@ -8,6 +8,7 @@ import { About } from './components/About';
 import { TechStack } from './components/TechStack';
 import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
+import { SystemDesign } from './components/SystemDesign';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import CustomCursor from "./components/CustomCursor";
@@ -25,7 +26,7 @@ function App() {
       smoothTouch: false,
       touchMultiplier: 2,
     });
-    (window as any).lenis = lenis; // Expose Lenis instance to window for global access
+    (window as any).lenis = lenis;
 
     function raf(time: number) {
       lenis.raf(time);
@@ -40,7 +41,7 @@ function App() {
   }, []);
 
   return (
-    
+
     <div className="bg-white text-slate-900 overflow-x-hidden">
       {/* <ThemeToggle /> */}
       <CustomCursor />
@@ -53,6 +54,7 @@ function App() {
       <TechStack />
       <Experience />
       <Projects />
+      <SystemDesign />
       <Contact />
       <Footer />
       {/* <ScrollToTop /> */}

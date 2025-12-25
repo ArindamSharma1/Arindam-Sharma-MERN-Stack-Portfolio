@@ -142,7 +142,7 @@ export const Contact = () => {
               variants={containerVariants}
               onSubmit={handleSubmit}
             >
-              {/* <motion.div variants={itemVariants}>
+              <motion.div variants={itemVariants}>
                 <label
                   htmlFor="name"
                   className="block text-sm font-semibold text-slate-900 mb-2"
@@ -159,9 +159,9 @@ export const Contact = () => {
                   className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all"
                   required
                 />
-              </motion.div> */}
+              </motion.div>
 
-              {/* <motion.div variants={itemVariants}>
+              <motion.div variants={itemVariants}>
                 <label
                   htmlFor="email"
                   className="block text-sm font-semibold text-slate-900 mb-2"
@@ -178,9 +178,9 @@ export const Contact = () => {
                   className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all"
                   required
                 />
-              </motion.div> */}
+              </motion.div>
 
-              {/* <motion.div variants={itemVariants}>
+              <motion.div variants={itemVariants}>
                 <label
                   htmlFor="message"
                   className="block text-sm font-semibold text-slate-900 mb-2"
@@ -209,13 +209,12 @@ export const Contact = () => {
                 {submitted ? 'Message Sent!' : 'Send Message'}
                 <Send
                   size={20}
-                  className={`group-hover:translate-x-1 transition-transform ${
-                    submitted ? 'hidden' : ''
-                  }`}
+                  className={`group-hover:translate-x-1 transition-transform ${submitted ? 'hidden' : ''
+                    }`}
                 />
-              </motion.button> */}
+              </motion.button>
 
-              {/* {submitted && (
+              {submitted && (
                 <motion.div
                   className="p-4 rounded-lg bg-accent/10 border border-accent text-accent text-center font-semibold"
                   initial={{ opacity: 0, y: -10 }}
@@ -223,7 +222,7 @@ export const Contact = () => {
                 >
                   Thank you! I'll get back to you soon.
                 </motion.div>
-              )} */}
+              )}
             </motion.form>
           </div>
         </motion.div>
@@ -233,7 +232,7 @@ export const Contact = () => {
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
         >
-          {/* Uncomment below to show a centered logo/link */}
+          {/*centered logo/link */}
           {/* <a href="https://arindamsharma.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
             <img src="./src/images/A-Logo.png" alt="Arindam Logo" className="w-6 h-6" />
           </a> */}
