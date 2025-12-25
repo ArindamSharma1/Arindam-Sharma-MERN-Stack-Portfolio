@@ -100,12 +100,13 @@ export const Hero = () => {
               variants={itemVariants}
               whileHover={{ x: 10 }}
               whileTap={{ scale: 0.95 }}
-              href="https://api.whatsapp.com/send?phone=918580705992&text=Hey%20Welcome!%0AThis%20is%20an%20automated%20response%20please%20wait%20a%20while.%20Thankyou"
+              href="/projects/Arindam_Sharma_Resume_C.pdf"
+              download="Arindam_Sharma_Resume_C.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Hire me on WhatsApp"
+              aria-label="Resume"
             >
-              Hire Me
+              Resume
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </motion.a>
           </div>

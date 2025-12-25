@@ -17,7 +17,7 @@ const projects = [
 		description:
 			'FolioGauge is automated critique system, elevating portfolio analysis into the AI-driven era.',
 		demo: 'https://folio-gauge.vercel.app/',
-		repo: 'https://github.com/ArindamSharma1/Folio-Gauge',
+		repo: 'https://github.com/ArindamSharma1/FolioGauge',
 	},
 	{
 		title: 'Quantum QR',
@@ -36,15 +36,6 @@ const projects = [
 		repo: 'https://github.com/ArindamSharma1/Quantum-QR',
 	},
 	{
-		title: 'Learn Vista-Moodle LMS',
-		image: '/projects/learn-vista.png',
-		tech: ['React', 'JavaScript', 'CSS', 'API Integration'],
-		description:
-			'A Moodle LMS student portal with integrated with multiple languages support.',
-		// demo: 'https://example.com/learn-vista',
-		repo: 'https://github.com/ArindamSharma1/learn-vista',
-	},
-	{
 		title: 'JYC-JUIT Youth Club Website',
 		image: '/projects/jyc-juit.png',
 		tech: ['React', 'Chart.js', 'API Integration', 'Tailwind CSS', 'REST APIs'],
@@ -54,7 +45,16 @@ const projects = [
 		// repo: 'https://github.com/yourusername/jyc-juit',
 	},
 	{
-		title: 'Helped Maintain University Website',
+		title: 'Learn Vista-Moodle LMS',
+		image: '/projects/learn-vista.png',
+		tech: ['React', 'JavaScript', 'CSS', 'API Integration'],
+		description:
+			'A Moodle LMS student portal with integrated with multiple languages support.',
+		// demo: 'https://example.com/learn-vista',
+		repo: 'https://github.com/ArindamSharma1/learn-vista',
+	},
+	{
+		title: 'Maintaining University Website',
 		image: '/projects/juit.png',
 		tech: [
 			'React',
