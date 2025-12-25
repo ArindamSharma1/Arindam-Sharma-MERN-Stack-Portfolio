@@ -4,17 +4,24 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
 	{
-		title: 'Learn Vista-Moodle LMS',
-		image: '/projects/learn-vista.png',
-		tech: ['React', 'JavaScript', 'CSS', 'API Integration'],
+		title: 'Folio Gauge - AI Powered Portfolio Analyzer',
+		image: '/projects/Folio-Gauge.png',
+		tech: [
+			'React',
+			'FastAPI',
+			'Supabase',
+			'PostgreSQL',
+			'GSAP',
+			'Vite',
+		],
 		description:
-			'A Moodle LMS student portal with integrated with multiple languages support.',
-		demo: 'https://example.com/learn-vista',
-		repo: 'https://github.com/ArindamSharma1/learn-vista',
+			'FolioGauge is automated critique system, elevating portfolio analysis into the AI-driven era.',
+		demo: 'https://folio-gauge.vercel.app/',
+		repo: 'https://github.com/ArindamSharma1/Folio-Gauge',
 	},
 	{
 		title: 'Quantum QR',
-		image: '/projects/Quantum-QR.png',
+		image: '/projects/Quantum-QR-1.png',
 		tech: [
 			'React',
 			'JavaScript',
@@ -29,13 +36,13 @@ const projects = [
 		repo: 'https://github.com/ArindamSharma1/Quantum-QR',
 	},
 	{
-		title: 'Cleanfolio-Portfolio Website',
-		image: '/projects/portfolio-website.png',
-		tech: ['React', 'Vite', 'GSAP', 'JavaScript', 'Responsive Design', 'CSS'],
+		title: 'Learn Vista-Moodle LMS',
+		image: '/projects/learn-vista.png',
+		tech: ['React', 'JavaScript', 'CSS', 'API Integration'],
 		description:
-			'Very Simple but effective & Modern, responsive portfolio website with smooth animations and scroll effects.',
-		demo: 'https://frontend-portfolio-bice-alpha.vercel.app/',
-		repo: 'https://github.com/ArindamSharma1/cleanfolio',
+			'A Moodle LMS student portal with integrated with multiple languages support.',
+		// demo: 'https://example.com/learn-vista',
+		repo: 'https://github.com/ArindamSharma1/learn-vista',
 	},
 	{
 		title: 'JYC-JUIT Youth Club Website',
@@ -107,10 +114,10 @@ const ProjectCard = ({
 				/>
 
 				<div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-					<h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+					<h3 className="text-xl md:text-2xl font-bold text-white mb-2 line-clamp-2">
 						{project.title}
 					</h3>
-					<p className="text-slate-200 text-sm mb-4 line-clamp-2">
+					<p className="text-slate-200 text-sm mb-4 flex-shrink-0">
 						{project.description}
 					</p>
 					<div className="flex items-center justify-between">
@@ -209,7 +216,7 @@ export const Projects = () => {
 				>
 					<motion.div variants={headerVariants}>
 						<h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-4">
-							Featured Projects
+							Selected Projects
 						</h2>
 						<div className="w-24 h-1 bg-accent rounded-full"></div>
 					</motion.div>
