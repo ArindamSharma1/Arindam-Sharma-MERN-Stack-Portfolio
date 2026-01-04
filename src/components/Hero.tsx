@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { link } from 'framer-motion/client';
 import { HERO_STATS } from '../constants';
 
 const containerVariants = {
@@ -9,14 +8,14 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 15 },
   visible: {
     opacity: 1,
     y: 0,
@@ -45,17 +44,17 @@ const StatCard = ({ end, label }: { end: number; label: string }) => {
 
   return (
     <motion.div
-      className="text-center"
+      className="text-left"
       variants={itemVariants}
-      whileHover={{ scale: 1.05 }}
+      whileHover={{ x: 5 }}
     >
-      <div className="text-4xl md:text-5xl font-bold text-accent">
+      <div className="text-3xl font-bold text-accent mb-1">
         {count}
-        {label === 'Hours Worked' && 'K+'}
         {label === 'Completed Projects' && '+'}
-        {label === 'Years of Experience' && '+'}
+        {label === 'Years Experience' && '+'}
+        {label === 'Code Quality %' && '%'}
       </div>
-      <p className="text-txt-secondary text-sm md:text-base mt-2">{label}</p>
+      <p className="text-txt-secondary text-sm font-medium tracking-wide uppercase">{label}</p>
     </motion.div>
   );
 };
@@ -65,64 +64,52 @@ export const Hero = () => {
     <section
       id="home"
       data-section="home"
-      className="pt-24 pb-20 md:pt-28 md:pb-32 min-h-screen flex items-center"
+      className="pt-32 pb-20 min-h-screen flex items-center relative"
     >
-      <div className="section-max-width w-full section-padding">
+      <div className="section-max-width w-full section-padding relative z-10">
         <motion.div
-          className="space-y-12"
+          className="space-y-16"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <div className="space-y-4">
-            <motion.div
-              className="inline-block px-4 py-2 bg-secondary/10 rounded-full"
-              variants={itemVariants}
-            >
-              <span className="text-secondary text-sm font-semibold">Welcome to my portfolio</span>
-            </motion.div>
+          <div className="space-y-6 max-w-4xl relative">
+            {/* Visual Signature: Vertical Accent Line */}
+            <div className="absolute -left-6 md:-left-12 top-2 w-1 h-32 bg-accent/50 hidden md:block"></div>
 
             <motion.h1
-              className="text-6xl md:text-7xl lg:text-8xl font-black leading-tight text-gradient"
+              className="text-5xl md:text-7xl lg:text-8xl font-black leading-[1.1] text-txt-primary tracking-tight"
               variants={itemVariants}
             >
-              MERN-STACK<br />DEVELOPER
+              Engineering Scalable <span className="text-accent relative inline-block">Web Ecosystems<span className="absolute bottom-2 left-0 w-full h-2 bg-accent/20 -z-10"></span></span>
             </motion.h1>
 
             <motion.p
-              className="text-lg md:text-xl text-txt-secondary max-w-2xl leading-relaxed"
+              className="text-lg md:text-xl text-txt-secondary max-w-2xl leading-relaxed font-medium"
               variants={itemVariants}
             >
-              Hi! My name is Arindam Sharma and I’m a MERN Stack Developer with experience building scalable, performance-driven web applications. I focus on creating clean, responsive interfaces with React while designing reliable backend systems using Node.js, Express, and MongoDB.
+              Full Stack Engineer focused on <span className="text-txt-primary">performance, security,</span> and <span className="text-txt-primary">design systems.</span> I build resilient applications that scale with your business.
             </motion.p>
 
-            <motion.a
-              className="button-primary flex items-center gap-2 group w-fit"
-              variants={itemVariants}
-              whileHover={{ x: 10, scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              animate={{
-                boxShadow: ['0 0 0 0 rgba(255, 120, 73, 0)', '0 0 0 10px rgba(255, 120, 73, 0)'],
-              }}
-              transition={{
-                boxShadow: {
-                  duration: 1.5,
-                  repeat: Infinity,
-                }
-              }}
-              href="/projects/Arindam_Sharma_Resume_C.pdf"
-              download="Arindam_Sharma_Resume_C.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Resume"
-            >
-              Resume
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </motion.a>
+            <motion.div variants={itemVariants} className="pt-4">
+              <motion.a
+                className="button-primary flex items-center gap-2 group w-fit text-sm tracking-wide"
+                whileHover={{ x: 5 }}
+                whileTap={{ scale: 0.98 }}
+                href="/projects/Arindam_Sharma_Resume_C.pdf"
+                download="Arindam_Sharma_Resume_C.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Resume"
+              >
+                View Resume
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </motion.a>
+            </motion.div>
           </div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12"
+            className="grid grid-cols-2 md:grid-cols-3 gap-12 pt-12 border-t border-primary-surface/30 w-full md:w-fit"
             variants={containerVariants}
           >
             {HERO_STATS.map((stat) => (

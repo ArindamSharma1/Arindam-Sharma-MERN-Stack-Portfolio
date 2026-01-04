@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 
 import { PROJECTS } from '../constants';
 
@@ -27,69 +27,86 @@ const ProjectCard = ({
 
 	return (
 		<motion.div
-			className="group"
+			className="group flex flex-col h-full bg-primary-surface border border-white/5 hover:border-accent/20 transition-colors rounded-lg overflow-hidden"
 			variants={containerVariants}
-			whileHover={{ y: -8 }}
+			whileHover={{ y: -4 }}
 		>
-			<div className="relative rounded-xl overflow-hidden bg-primary-surface aspect-video shadow-lg">
+			<div className="relative aspect-video overflow-hidden">
 				<img
 					src={project.image}
 					alt={project.title}
-					className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+					className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
 				/>
+				<div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300" />
+			</div>
 
-				<div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 pt-8">
-					<p className="text-txt-secondary text-sm mb-4 flex-shrink-0">
-						{project.description}
+			<div className="p-6 flex flex-col flex-grow relative">
+				{/* Context Line */}
+				<div className="flex items-center justify-between mb-3">
+					<span className="text-xs font-medium text-accent uppercase tracking-wider">
+						{project.context}
+					</span>
+					<span className="text-xs text-txt-secondary/60">
+						{project.role}
+					</span>
+				</div>
+
+				<h3 className="text-2xl font-bold text-txt-primary mb-3 group-hover:text-accent transition-colors flex items-center gap-2">
+					{project.title}
+					<ArrowUpRight size={18} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-accent" />
+				</h3>
+
+				<p className="text-txt-secondary text-sm leading-relaxed mb-4 flex-grow">
+					{project.description}
+				</p>
+
+				<div className="mb-6">
+					<p className="text-sm font-medium text-txt-primary border-l-2 border-accent pl-3 py-1 bg-accent/5">
+						<span className="opacity-70 text-xs uppercase block mb-1">Outcome</span>
+						{project.outcome}
 					</p>
-					<div className="flex items-center justify-between">
-						<div className="flex flex-wrap gap-2">
-							{project.tech.slice(0, 3).map((tech) => (
-								<span
-									key={tech}
-									className="px-2 py-1 bg-white/20 text-white text-xs rounded-full backdrop-blur"
-								>
-									{tech}
-								</span>
-							))}
-						</div>
-						<div className="flex items-center gap-2">
+				</div>
+
+				<div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+					<div className="flex flex-wrap gap-2">
+						{project.tech.slice(0, 3).map((tech) => (
+							<span
+								key={tech}
+								className="text-xs text-txt-secondary font-medium"
+							>
+								{tech}
+							</span>
+						))}
+						{project.tech.length > 3 && (
+							<span className="text-xs text-txt-secondary font-medium opacity-60">
+								+{project.tech.length - 3} more
+							</span>
+						)}
+					</div>
+					<div className="flex items-center gap-3">
+						{project.demo && (
 							<a
 								href={project.demo}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="p-2 rounded-lg bg-accent hover:bg-accent-hover transition-colors"
+								className="text-txt-secondary hover:text-accent transition-colors"
 								aria-label={`Open ${project.title} demo`}
 							>
-								<ExternalLink size={16} className="text-white" />
+								<ExternalLink size={18} />
 							</a>
+						)}
+						{project.repo && (
 							<a
 								href={project.repo}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="p-2 rounded-lg bg-secondary/80 hover:bg-secondary transition-colors"
+								className="text-txt-secondary hover:text-accent transition-colors"
 								aria-label={`Open ${project.title} repository`}
 							>
-								<Github size={16} className="text-white" />
+								<Github size={18} />
 							</a>
-						</div>
+						)}
 					</div>
-				</div>
-			</div>
-
-			<div className="mt-4 space-y-2">
-				<h3 className="text-lg font-bold text-txt-primary group-hover:text-accent transition-colors">
-					{project.title}
-				</h3>
-				<div className="flex flex-wrap gap-2">
-					{project.tech.map((tech) => (
-						<span
-							key={tech}
-							className="px-3 py-1 bg-primary-surface text-txt-secondary text-xs font-semibold rounded-full"
-						>
-							{tech}
-						</span>
-					))}
 				</div>
 			</div>
 		</motion.div>
@@ -98,7 +115,7 @@ const ProjectCard = ({
 
 export const Projects = () => {
 	const { ref, inView } = useInView({
-		threshold: 0.15,
+		threshold: 0.1,
 		triggerOnce: true,
 	});
 
@@ -114,10 +131,10 @@ export const Projects = () => {
 	};
 
 	const headerVariants = {
-		hidden: { opacity: 0, y: 20 },
+		hidden: { opacity: 0, x: -20 },
 		visible: {
 			opacity: 1,
-			y: 0,
+			x: 0,
 			transition: { duration: 0.6 },
 		},
 	};
@@ -131,16 +148,19 @@ export const Projects = () => {
 		>
 			<div className="section-max-width">
 				<motion.div
-					className="space-y-12"
+					className="space-y-16"
 					variants={containerVariants}
 					initial="hidden"
 					animate={inView ? 'visible' : 'hidden'}
 				>
-					<motion.div variants={headerVariants}>
-						<h2 className="text-5xl md:text-6xl font-bold text-txt-primary mb-4">
-							Selected Projects
+					<motion.div variants={headerVariants} className="max-w-xl pl-6 border-l-2 border-accent relative">
+						{/* Visual Signature */}
+						<h2 className="text-4xl md:text-5xl font-bold text-txt-primary mb-2">
+							Selected Work
 						</h2>
-						<div className="w-24 h-1 bg-accent rounded-full"></div>
+						<p className="text-txt-secondary text-lg">
+							Building products that solve real problems.
+						</p>
 					</motion.div>
 
 					<motion.div

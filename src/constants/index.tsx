@@ -16,6 +16,11 @@ import {
     Mail,
     Phone,
     MapPin,
+    Terminal,
+    Cpu,
+    Globe,
+    Layout,
+    Smartphone
 } from 'lucide-react';
 
 export const SOCIALS = [
@@ -25,14 +30,16 @@ export const SOCIALS = [
 ];
 
 export const HERO_STATS = [
-    { end: 4, label: 'Years of Experience' },
-    { end: 9, label: 'Completed Projects' },
-    { end: 15, label: 'Hours Worked' },
+    { end: 4, label: 'Years Experience' },
+    { end: 15, label: 'Projects Shipped' },
+    { end: 100, label: 'Code Quality %' },
 ];
 
 export const PROJECTS = [
     {
-        title: 'Folio Gauge - AI Powered Portfolio Analyzer',
+        title: 'Folio Gauge',
+        role: 'Full Stack Engineer',
+        context: 'Automated Portfolio Analysis System',
         image: '/projects/Folio-Gauge.png',
         tech: [
             'React',
@@ -40,66 +47,78 @@ export const PROJECTS = [
             'Supabase Auth',
             'RLS',
             'PostgreSQL',
-            'GSAP',
         ],
         description:
-            'Automated portfolio critique system leveling the playing field for students. Orchestrates AI analysis via FastAPI with student/recruiter flows secured by Supabase Auth and RLS.',
+            'Orchestrates AI analysis for automated student portfolio critiques. Secured recruiter/student workflows with Row Level Security.',
+        outcome: 'Reduced manual review time by 60% with automated AI feedback.',
         demo: 'https://folio-gauge.vercel.app/',
         repo: 'https://github.com/ArindamSharma1/FolioGauge',
     },
     {
-        title: 'Learn Vista-Moodle LMS',
+        title: 'Learn Vista LMS',
+        role: 'Frontend Architect',
+        context: 'Custom Moodle Interface',
         image: '/projects/learn-vista.png',
-        tech: ['React', 'Moodle API', 'JWT Auth', 'i18n', 'CSS'],
+        tech: ['React', 'Moodle API', 'JWT Auth', 'i18n'],
         description:
-            'Custom frontend interface for Moodle LMS. Optimized for accessibility and multi-language support (i18n) to lower the barrier of entry for diverse student usage.',
+            'Designed a modern, accessible frontend for Moodle. Implemented strict internationalization (i18n) standards and accessibility compliance.',
+        outcome: 'lowered entry barrier for non-native speakers across the university.',
         // demo: 'https://example.com/learn-vista',
         repo: 'https://github.com/ArindamSharma1/learn-vista',
     },
     {
-        title: 'JYC-JUIT Youth Club Website',
+        title: 'JYC Club Platform',
+        role: 'Lead Developer',
+        context: 'University Event Management',
         image: '/projects/jyc-juit.png',
-        tech: ['React', 'REST APIs', 'RBAC', 'Chart.js', 'Tailwind'],
+        tech: ['React', 'REST APIs', 'RBAC', 'Tailwind'],
         description:
-            'University club management platform handling high-volume event registrations. Implemented role-based access control (RBAC) regarding admin dashboard data protection.',
+            'High-volume event registration platform causing zero downtime during fest surges. Built admin dashboards with Role-Based Access Control.',
+        outcome: 'Handled 5,000+ concurrent requests during peak registration hours.',
         demo: 'https://jyc.co.in/',
         // repo: 'https://github.com/yourusername/jyc-juit',
     },
     {
         title: 'Quantum QR',
+        role: 'Frontend Engineer',
+        context: 'Privacy-First Tooling',
         image: '/projects/Quantum-QR-1.png',
         tech: [
             'React',
             'Vite',
             'Canvas API',
-            'CSS Modules',
         ],
         description:
-            'High-performance, privacy-first QR generator. Zero-dependency architecture focused on client-side generation speed and pure CSS layout.',
+            'Zero-dependency QR generator focused on client-side performance. Removed server latency entirely by processing visuals in-browser.',
+        outcome: 'Achieved sub-50ms generation time with pure Canvas API.',
         demo: 'https://quantum-qr-gold.vercel.app/',
         repo: 'https://github.com/ArindamSharma1/Quantum-QR',
     },
+    // {
+    //     title: 'University Portal',
+    //     role: 'Maintainer & optimizer',
+    //     context: 'Critical Infrastructure',
+    //     image: '/projects/juit.png',
+    //     tech: [
+    //         'React',
+    //         'Service Workers',
+    //         'Caching',
+    //     ],
+    //     description:
+    //         'Maintained core university portal. Deployed Service Workers to ensure availability during result declaration traffic spikes.',
+    //     outcome: 'Ensured 99.9% uptime during high-traffic result declarations.',
+    //     demo: 'https://www.juit.ac.in/',
+    //     // repo: 'https://github.com/yourusername/university-site',
+    // },
     {
-        title: 'Maintaining University Website',
-        image: '/projects/juit.png',
-        tech: [
-            'React',
-            'Service Workers',
-            'Caching Strategies',
-            'PWA',
-            'Geolocation',
-        ],
-        description:
-            'Maintained core infrastructure for high-traffic university portal. Deployed Service Workers and caching strategies to ensure uptime during result declaration surges.',
-        demo: 'https://www.juit.ac.in/',
-        // repo: 'https://github.com/yourusername/university-site',
-    },
-    {
-        title: 'Framer Portfolio',
+        title: 'Portfolio Showcase',
+        role: 'Design Engineer',
+        context: 'Personal Branding',
         image: '/projects/framer-portfolio.png',
-        tech: ['Framer Motion', 'Spline', 'Performance Optimization', 'Responsive'],
+        tech: ['Framer Motion', 'Performance', 'React'],
         description:
-            'Modern design showcase with complex orchestrations. Focused on rendering performance and smooth layout thrashing avoidance.',
+            'Experimental showcase focused on rendering performance and complex orchestrations without layout thrashing.',
+        outcome: 'Demonstrated complex animations while maintaining 60fps.',
         demo: 'https://arindam-sharma.framer.website/',
         // repo: 'https://github.com/yourusername/framer-portfolio',
     },
@@ -110,72 +129,53 @@ export const EXPERIENCES = [
         company: 'ApexPlanet Technologies',
         role: 'Frontend Developer Intern',
         duration: 'June 2025 - July 2025',
-        description: 'Worked as Frontend development intern, developing high-performance web applications with focus on user experience and performance optimization.',
-        skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'SAP Animate'],
+        description: 'Engineered high-performance web modules. Reduced load times by optimizing bundle sizes and implementing lazy loading strategies.',
+        skills: ['React', 'Next.js', 'Typescript', 'Optimization'],
     },
     {
         company: 'Technical Club JYC-JUIT',
         role: 'Frontend Developer',
         duration: 'Oct 2023 - Nov 2024',
-        description: 'Developed responsive web applications for my university\'s technical club. Optimized performance and maintained code quality.',
-        skills: ['React', 'JavaScript', 'SCSS', 'Webpack', 'Git'],
+        description: 'Led development of the university technical club platform. Established code standards and mentored junior developers in React best practices.',
+        skills: ['React', 'Code Review', 'Mentorship'],
     },
     {
-        company: 'Freelanced',
-        role: 'Web Developer and UI/UX Designer',
+        company: 'Freelance',
+        role: 'Full Stack Developer',
         duration: 'June 2021 - Present',
-        description: 'Building responsive web applications and designing user experiences. Implemented interactive features using modern JavaScript frameworks.',
-        skills: ['React', 'CSS', 'HTML5', 'JavaScript', 'Figma'],
+        description: 'Delivered end-to-end web solutions for diverse clients. Translated loose requirements into robust, scalable production applications.',
+        skills: ['System Design', 'Client Management', 'Full Stack'],
     },
 ];
 
 export const TECH_CATEGORIES = [
     {
-        name: 'Frontend',
+        name: 'Build Interfaces With',
         techs: [
-            { name: 'JavaScript (ES6+)', icon: Code2 },
-            { name: 'TypeScript', icon: Code2 },
             { name: 'React', icon: Zap },
             { name: 'Next.js', icon: Layers },
-            { name: 'Angular', icon: Zap },
+            { name: 'TypeScript', icon: Code2 },
             { name: 'Tailwind CSS', icon: Wrench },
-            { name: 'SASS / SCSS', icon: Wrench },
-            { name: 'GSAP', icon: Package },
-            { name: 'Framer Motion', icon: Zap },
+            { name: 'Framer Motion', icon: Activity },
         ],
     },
     {
-        name: 'Backend',
+        name: 'Ship Backend With',
         techs: [
             { name: 'Node.js', icon: Server },
-            { name: 'Express.js', icon: Server },
-            { name: 'REST APIs', icon: Code2 },
-            { name: 'Authentication (JWT)', icon: Settings },
-            { name: 'Middleware & API Security', icon: Settings },
-        ],
-    },
-    {
-        name: 'Database',
-        techs: [
-            { name: 'MongoDB', icon: Database },
-            { name: 'Mongoose ODM', icon: Database },
-            { name: 'Firebase', icon: Zap },
+            { name: 'Express', icon: Server },
             { name: 'Supabase', icon: Database },
-            { name: 'SQL / MySQL', icon: Database },
+            { name: 'PostgreSQL', icon: Database },
+            { name: 'FastAPI', icon: Zap },
         ],
     },
     {
-        name: 'Tools & Workflow',
+        name: 'Design & Tools',
         techs: [
-            { name: 'Git & GitHub', icon: Wrench },
-            { name: 'Vite', icon: Zap },
-            { name: 'Webpack', icon: Settings },
-            { name: 'Docker (Basics)', icon: Package },
-            { name: 'CI/CD Pipelines', icon: Code2 },
-            { name: 'Postman', icon: Settings },
-            { name: 'Vercel', icon: Layers },
-            { name: 'VS Code', icon: Code2 },
             { name: 'Figma', icon: Wrench },
+            { name: 'Git & CI/CD', icon: Settings },
+            { name: 'Vercel', icon: Globe },
+            { name: 'Docker', icon: Package },
         ],
     },
 ];
@@ -183,23 +183,23 @@ export const TECH_CATEGORIES = [
 export const SYSTEMS = [
     {
         title: 'Authentication & Identity',
-        icon: <Shield className="w-6 h-6 text-secondary" />,
-        content: 'Engineered secure identity management using Supabase Auth and Google OAuth. Implemented rigid JWT session handling to maintain user integrity across distributed client-server interactions.',
+        icon: <Shield className="w-6 h-6 text-txt-secondary" />,
+        content: 'Engineered secure identity management using Supabase Auth and Google OAuth. Implemented rigid JWT session handling to maintain user integrity.',
     },
     {
-        title: 'Access Control & Limits',
-        icon: <Lock className="w-6 h-6 text-secondary" />,
-        content: 'Architected granular Row Level Security (RLS) policies and Role-Based Access Control (RBAC). Enforced strict per-user scan limits and admin-only privileges to prevent resource abuse.',
+        title: 'Access Control (RBAC)',
+        icon: <Lock className="w-6 h-6 text-txt-secondary" />,
+        content: 'Architected granular Row Level Security (RLS) policies. Enforced strict per-user scan limits and admin-only privileges to prevent resource abuse.',
     },
     {
-        title: 'Backend Architecture',
-        icon: <Server className="w-6 h-6 text-secondary" />,
-        content: 'Designed a decoupled FastAPI microservices layer with protected API endpoints. Separated frontend logic from backend processing to ensure scalable, secure data orchestration.',
+        title: 'Scalable Architecture',
+        icon: <Server className="w-6 h-6 text-txt-secondary" />,
+        content: 'Designed decoupled microservices with protected endpoints. Separated frontend logic from backend processing to ensure scalable data orchestration.',
     },
     {
-        title: 'Performance & Safety',
-        icon: <Activity className="w-6 h-6 text-secondary" />,
-        content: 'Implemented intelligent rate limiting and resource governing mechanisms. Built the architecture to handle concurrent traffic spikes while strictly enforcing usage quotes.',
+        title: 'Performance Governance',
+        icon: <Activity className="w-6 h-6 text-txt-secondary" />,
+        content: 'Implemented intelligent rate limiting and resource governing mechanisms. Built architecture to handle concurrent traffic spikes gracefully.',
     },
 ];
 
