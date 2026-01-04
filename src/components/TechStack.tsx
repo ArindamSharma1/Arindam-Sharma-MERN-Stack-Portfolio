@@ -88,9 +88,9 @@ const TechItem = ({ tech, index }: { tech: any; index: number }) => {
       <div className="flex flex-col items-center gap-2">
         <Icon
           size={32}
-          className="text-accent group-hover:text-accent-dark transition-colors"
+          className="text-secondary group-hover:text-accent transition-colors"
         />
-        <span className="text-xs font-semibold text-slate-600 group-hover:text-slate-900 text-center transition-colors">
+        <span className="text-xs font-semibold text-txt-secondary group-hover:text-txt-primary text-center transition-colors">
           {tech.name}
         </span>
       </div>
@@ -126,7 +126,7 @@ export const TechStack = () => {
 
   return (
     <section
-      className="section-padding bg-gradient-to-b from-slate-50 to-white"
+      className="section-padding bg-primary"
       ref={ref}
     >
       <div className="section-max-width">
@@ -137,7 +137,7 @@ export const TechStack = () => {
           animate={inView ? 'visible' : 'hidden'}
         >
           <motion.div variants={categoryVariants}>
-            <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-txt-primary mb-4">
               Tech Stack
             </h2>
             <div className="w-24 h-1 bg-accent rounded-full"></div>
@@ -150,7 +150,7 @@ export const TechStack = () => {
                 className="space-y-6"
                 variants={categoryVariants}
               >
-                <h3 className="text-2xl font-bold text-slate-900">
+                <h3 className="text-2xl font-bold text-txt-primary">
                   {category.name}
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">

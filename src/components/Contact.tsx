@@ -98,7 +98,7 @@ export const Contact = () => {
               </motion.div>
 
               <motion.div
-                className="p-6 rounded-lg bg-slate-50 border border-slate-200 hover:border-accent/30 transition-colors"
+                className="p-6 rounded-lg bg-primary-surface border border-secondary/10 hover:border-accent/30 transition-colors"
                 variants={itemVariants}
                 whileHover={{ x: 8 }}
               >
@@ -110,7 +110,7 @@ export const Contact = () => {
                     <h3 className="text-lg font-bold text-txt-primary">Phone</h3>
                     <a
                       href="tel:+1234567890"
-                      className="text-accent hover:text-accent-dark transition-colors mt-1"
+                      className="text-accent hover:text-accent-hover transition-colors mt-1"
                     >
                       +91 8580705992
                     </a>
@@ -119,7 +119,7 @@ export const Contact = () => {
               </motion.div>
 
               <motion.div
-                className="p-6 rounded-lg bg-slate-50 border border-slate-200 hover:border-accent/30 transition-colors"
+                className="p-6 rounded-lg bg-primary-surface border border-secondary/10 hover:border-accent/30 transition-colors"
                 variants={itemVariants}
                 whileHover={{ x: 8 }}
               >
@@ -164,7 +164,7 @@ export const Contact = () => {
               <motion.div variants={itemVariants}>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-semibold text-slate-900 mb-2"
+                  className="block text-sm font-semibold text-txt-primary mb-2"
                 >
                   Email Address
                 </label>
@@ -175,7 +175,7 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all"
+                  className="w-full px-4 py-3 rounded-lg bg-primary-surface border border-secondary/10 text-txt-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all placeholder:text-txt-secondary/50"
                   required
                 />
               </motion.div>
@@ -183,7 +183,7 @@ export const Contact = () => {
               <motion.div variants={itemVariants}>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-semibold text-slate-900 mb-2"
+                  className="block text-sm font-semibold text-txt-primary mb-2"
                 >
                   Message
                 </label>
