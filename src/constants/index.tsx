@@ -56,14 +56,14 @@ export const PROJECTS = [
     },
     {
         title: 'Learn Vista LMS',
-        role: 'Frontend Architect',
+        role: 'Full Stack Engineer',
         context: 'Custom Moodle Interface',
         image: '/projects/learn-vista.png',
         tech: ['React', 'Moodle API', 'JWT Auth', 'i18n'],
         description:
             'Designed a modern, accessible frontend for Moodle. Implemented strict internationalization (i18n) standards and accessibility compliance.',
         outcome: 'lowered entry barrier for non-native speakers across the university.',
-        // demo: 'https://example.com/learn-vista',
+        demo: 'https://learn-vista-xi.vercel.app/',
         repo: 'https://github.com/ArindamSharma1/learn-vista',
     },
     {
@@ -80,7 +80,7 @@ export const PROJECTS = [
     },
     {
         title: 'Quantum QR',
-        role: 'Frontend Engineer',
+        role: 'Self Completed',
         context: 'Privacy-First Tooling',
         image: '/projects/Quantum-QR-1.png',
         tech: [

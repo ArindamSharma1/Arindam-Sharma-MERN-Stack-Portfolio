@@ -89,10 +89,10 @@ const ProjectCard = ({
 								href={project.demo}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-txt-secondary hover:text-accent transition-colors"
+								className="p-2 -m-2 text-txt-secondary hover:text-accent transition-colors relative z-20"
 								aria-label={`Open ${project.title} demo`}
 							>
-								<ExternalLink size={18} />
+								<ExternalLink size={20} />
 							</a>
 						)}
 						{project.repo && (
@@ -100,10 +100,10 @@ const ProjectCard = ({
 								href={project.repo}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-txt-secondary hover:text-accent transition-colors"
+								className="p-2 -m-2 text-txt-secondary hover:text-accent transition-colors relative z-20"
 								aria-label={`Open ${project.title} repository`}
 							>
-								<Github size={18} />
+								<Github size={20} />
 							</a>
 						)}
 					</div>
