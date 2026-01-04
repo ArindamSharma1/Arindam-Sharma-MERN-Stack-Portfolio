@@ -10,20 +10,20 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: '#0f1115', // Main background (60%)
-          surface: '#14161b', // Cards, sections (60% var)
+          DEFAULT: '#0f1115',
+          surface: '#14161b',
         },
         secondary: {
-          DEFAULT: '#8b7cf6', // Muted lavender (30%)
+          DEFAULT: '#8b7cf6',
           foreground: '#a89df4',
         },
         accent: {
-          DEFAULT: '#ff7849', // Tangerine (10%)
+          DEFAULT: '#ff7849',
           hover: '#ff6b4a',
         },
         txt: {
-          primary: '#eaeaf0', // Off-white
-          secondary: '#94a3b8', // Muted gray
+          primary: '#eaeaf0',
+          secondary: '#94a3b8',
         },
       },
       fontSize: {
