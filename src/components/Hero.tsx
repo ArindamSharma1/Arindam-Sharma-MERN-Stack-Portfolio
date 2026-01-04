@@ -88,7 +88,7 @@ export const Hero = () => {
               className="text-lg md:text-xl text-txt-secondary max-w-2xl leading-relaxed font-medium"
               variants={itemVariants}
             >
-              Full Stack Engineer focused on <span className="text-txt-primary">performance, security,</span> and <span className="text-txt-primary">design systems.</span> I build resilient applications that scale with your business.
+              Full-stack web development focused on <span className="text-txt-primary">performance, maintainability,</span> and <span className="text-txt-primary">scale.</span>
             </motion.p>
 
             <motion.div variants={itemVariants} className="pt-4">

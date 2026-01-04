@@ -45,11 +45,8 @@ export const Footer = () => {
         >
           <motion.div variants={itemVariants} className="max-w-2xl">
             <h2 className="text-5xl md:text-6xl font-black tracking-tight mb-8">
-              Let's build something <span className="text-accent">meaningful.</span>
+              Let's create something <span className="text-accent">lasting.</span>
             </h2>
-            <p className="text-txt-secondary text-lg leading-relaxed max-w-lg mb-8">
-              Open to new opportunities and interesting projects.
-            </p>
             <div className="flex flex-wrap gap-4">
               {socials.map((social) => {
                 const Icon = social.icon;

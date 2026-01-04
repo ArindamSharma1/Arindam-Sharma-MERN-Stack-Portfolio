@@ -160,7 +160,7 @@ export const TECH_CATEGORIES = [
         ],
     },
     {
-        name: 'Ship Backend With',
+        name: 'Backends I Ship',
         techs: [
             { name: 'Node.js', icon: Server },
             { name: 'Express', icon: Server },
@@ -170,7 +170,7 @@ export const TECH_CATEGORIES = [
         ],
     },
     {
-        name: 'Design & Tools',
+        name: 'Motion/Design Tools',
         techs: [
             { name: 'Figma', icon: Wrench },
             { name: 'Git & CI/CD', icon: Settings },
