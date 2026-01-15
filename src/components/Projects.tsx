@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 
@@ -13,14 +13,15 @@ const ProjectCard = ({
 	project: (typeof projects)[0];
 	index: number;
 }) => {
-	const containerVariants = {
-		hidden: { opacity: 0, y: 30 },
+	const cardVariants: Variants = {
+		hidden: { opacity: 0, scale: 0.9, y: 50 },
 		visible: {
 			opacity: 1,
+			scale: 1,
 			y: 0,
 			transition: {
-				duration: 0.6,
-				delay: index * 0.1,
+				duration: 0.8,
+				ease: [0.22, 1, 0.36, 1], // "Premium" ease
 			},
 		},
 	};
@@ -28,14 +29,16 @@ const ProjectCard = ({
 	return (
 		<motion.div
 			className="group flex flex-col h-full bg-primary-surface border border-white/5 hover:border-accent/20 transition-colors rounded-lg overflow-hidden"
-			variants={containerVariants}
-			whileHover={{ y: -4 }}
+			variants={cardVariants}
+			whileHover={{ y: -8, transition: { duration: 0.3, ease: 'easeOut' } }}
 		>
 			<div className="relative aspect-video overflow-hidden">
-				<img
+				<motion.img
 					src={project.image}
 					alt={project.title}
-					className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+					className="w-full h-full object-cover"
+					whileHover={{ scale: 1.08 }} // Framer Motion for smoother scale
+					transition={{ duration: 0.6, ease: "easeOut" }}
 				/>
 				<div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300" />
 			</div>
@@ -119,7 +122,7 @@ export const Projects = () => {
 		triggerOnce: true,
 	});
 
-	const containerVariants = {
+	const containerVariants: Variants = {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
@@ -130,7 +133,7 @@ export const Projects = () => {
 		},
 	};
 
-	const headerVariants = {
+	const headerVariants: Variants = {
 		hidden: { opacity: 0, x: -20 },
 		visible: {
 			opacity: 1,

@@ -1,30 +1,33 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { SYSTEMS } from '../constants';
 
 const systems = SYSTEMS;
 
-const SystemCard = ({ system, index }: { system: (typeof systems)[0]; index: number }) => {
-    const containerVariants = {
-        hidden: { opacity: 0, y: 20 },
+const SystemCard = ({ system }: { system: (typeof systems)[0] }) => {
+    const cardVariants: Variants = {
+        hidden: { opacity: 0, scale: 0.9, y: 20 },
         visible: {
             opacity: 1,
+            scale: 1,
             y: 0,
             transition: {
-                duration: 0.5,
-                delay: index * 0.1,
+                duration: 0.6,
+                ease: "easeOut",
             },
         },
     };
 
     return (
         <motion.div
-            variants={containerVariants}
-            className="p-6 rounded-xl bg-primary-surface border border-secondary/10 hover:border-accent/20 hover:shadow-sm transition-all duration-300"
+            variants={cardVariants}
+            className="p-6 rounded-xl bg-primary-surface border border-secondary/10 hover:border-accent/20 hover:shadow-sm transition-all duration-300 group"
         >
             <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-secondary/10 rounded-lg shadow-sm">
-                    {system.icon}
+                <div className="p-2 bg-secondary/10 rounded-lg shadow-sm group-hover:bg-accent/10 transition-colors">
+                    <div className="text-accent">
+                        {system.icon}
+                    </div>
                 </div>
                 <h3 className="text-xl font-bold text-txt-primary">{system.title}</h3>
             </div>
@@ -37,11 +40,11 @@ const SystemCard = ({ system, index }: { system: (typeof systems)[0]; index: num
 
 export const SystemDesign = () => {
     const { ref, inView } = useInView({
-        threshold: 0.15,
+        threshold: 0.1, // Lower threshold for earlier trigger
         triggerOnce: true,
     });
 
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -52,12 +55,22 @@ export const SystemDesign = () => {
         },
     };
 
-    const headerVariants = {
-        hidden: { opacity: 0, y: 20 },
+    // Specific variants for the grid to ensuring staggering flows correctly
+    const gridVariants: Variants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.1,
+            }
+        }
+    };
+
+    const headerVariants: Variants = {
+        hidden: { opacity: 0, x: -20 },
         visible: {
             opacity: 1,
-            y: 0,
-            transition: { duration: 0.6 },
+            x: 0,
+            transition: { duration: 0.6, ease: "easeOut" },
         },
     };
 
@@ -87,10 +100,10 @@ export const SystemDesign = () => {
 
                     <motion.div
                         className="grid md:grid-cols-2 gap-6"
-                        variants={containerVariants}
+                        variants={gridVariants}
                     >
-                        {systems.map((system, index) => (
-                            <SystemCard key={system.title} system={system} index={index} />
+                        {systems.map((system) => (
+                            <SystemCard key={system.title} system={system} />
                         ))}
                     </motion.div>
                 </motion.div>

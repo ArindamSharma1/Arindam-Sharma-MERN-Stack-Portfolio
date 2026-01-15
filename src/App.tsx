@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import Lenis from 'lenis';
+import { ReactLenis } from 'lenis/react';
 import { Navigation } from './components/Navigation';
 import { ProgressBar } from './components/ProgressBar';
 
@@ -15,48 +14,24 @@ import CustomCursor from "./components/CustomCursor";
 import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      smoothTouch: false,
-      touchMultiplier: 2,
-    });
-    (window as any).lenis = lenis;
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
   return (
+    <ReactLenis root>
+      <div className="bg-primary text-txt-primary overflow-x-hidden">
+        <CustomCursor />
+        <Navigation />
+        <ProgressBar />
 
-    <div className="bg-primary text-txt-primary overflow-x-hidden">
-      <CustomCursor />
-      <Navigation />
-      <ProgressBar />
-
-
-      <Hero />
-      <About />
-      <TechStack />
-      <Experience />
-      <Projects />
-      <SystemDesign />
-      <Contact />
-      <Footer />
-      <ScrollToTop />
-    </div>
+        <Hero />
+        <About />
+        <TechStack />
+        <Experience />
+        <Projects />
+        <SystemDesign />
+        <Contact />
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </ReactLenis>
   );
 }
 
