@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Briefcase, Calendar } from 'lucide-react';
 
@@ -12,7 +12,7 @@ export const Experience = () => {
         triggerOnce: true,
     });
 
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -23,7 +23,7 @@ export const Experience = () => {
         },
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, x: -20 },
         visible: {
             opacity: 1,
@@ -32,7 +32,7 @@ export const Experience = () => {
         },
     };
 
-    const headerVariants = {
+    const headerVariants: Variants = {
         hidden: { opacity: 0, x: -20 },
         visible: {
             opacity: 1,
@@ -44,7 +44,7 @@ export const Experience = () => {
     return (
         <section
             id="experience"
-            data- section="experience"
+            data-section="experience"
             className="section-padding"
             ref={ref}
         >

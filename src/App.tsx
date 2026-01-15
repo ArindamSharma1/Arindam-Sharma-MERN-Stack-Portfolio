@@ -1,17 +1,19 @@
+import { Suspense, lazy } from 'react';
 import { ReactLenis } from 'lenis/react';
 import { Navigation } from './components/Navigation';
 import { ProgressBar } from './components/ProgressBar';
-
 import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { TechStack } from './components/TechStack';
-import { Experience } from './components/Experience';
-import { Projects } from './components/Projects';
-import { SystemDesign } from './components/SystemDesign';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
 import CustomCursor from "./components/CustomCursor";
-import { ScrollToTop } from './components/ScrollToTop';
+
+// Lazy load below-the-fold components to improve initial load time (Lighthouse Score)
+const About = lazy(() => import('./components/About').then(module => ({ default: module.About })));
+const TechStack = lazy(() => import('./components/TechStack').then(module => ({ default: module.TechStack })));
+const Experience = lazy(() => import('./components/Experience').then(module => ({ default: module.Experience })));
+const Projects = lazy(() => import('./components/Projects').then(module => ({ default: module.Projects })));
+const SystemDesign = lazy(() => import('./components/SystemDesign').then(module => ({ default: module.SystemDesign })));
+const Contact = lazy(() => import('./components/Contact').then(module => ({ default: module.Contact })));
+const Footer = lazy(() => import('./components/Footer').then(module => ({ default: module.Footer })));
+const ScrollToTop = lazy(() => import('./components/ScrollToTop').then(module => ({ default: module.ScrollToTop })));
 
 function App() {
   return (
@@ -22,14 +24,17 @@ function App() {
         <ProgressBar />
 
         <Hero />
-        <About />
-        <TechStack />
-        <Experience />
-        <Projects />
-        <SystemDesign />
-        <Contact />
-        <Footer />
-        <ScrollToTop />
+
+        <Suspense fallback={<div className="min-h-screen bg-primary" />}>
+          <About />
+          <TechStack />
+          <Experience />
+          <Projects />
+          <SystemDesign />
+          <Contact />
+          <Footer />
+          <ScrollToTop />
+        </Suspense>
       </div>
     </ReactLenis>
   );

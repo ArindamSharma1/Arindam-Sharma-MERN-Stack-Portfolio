@@ -39,6 +39,8 @@ const ProjectCard = ({
 					className="w-full h-full object-cover"
 					whileHover={{ scale: 1.08 }} // Framer Motion for smoother scale
 					transition={{ duration: 0.6, ease: "easeOut" }}
+					loading="lazy"
+					decoding="async"
 				/>
 				<div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300" />
 			</div>
